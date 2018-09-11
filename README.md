@@ -1,172 +1,37 @@
+## Hello World
 
-				body{
-					background-color: rgba(0,0,0,.2);
-				}
-				a{
-					text-decoration: none;
-					font-family: "microsoft yahei";
-					color: rgba(0,0,0,2);
-					transition: 500ms;
-				}
-				#content{
-					width: 800px;
-					margin: 0 auto;
-					padding: 0;
-				}
-				
-				.box1 ul li a:hover{
-					color: white;
-				}
-				.header,
-				.main{
-					width:100%;
-					margin: 10px auto;
-				}
-				.header{
-					background: rgba(0,0,0,.2);
-					height: 50px;
-				}
-				.main{
-					height: 400px;
-				}
-				.main,
-				.box,
-				.box1,
-				.box2,
-				.header{
-					text-align: center;
-					border-radius:15px ;
-				}
-				.box{
-					width: 60%;
-					height: 100%;
-					margin:0 auto;
-					background-color:rgba(0,0,0,.2);
-					/* background-image: url(../img/309738-106.jpg); */
-					display: inline-block;
-				}
-				.box1{
-					width: 150px;
-					height: 100%;
-					background: rgba(0,0,0,.2);
-					float: left;
-					display: inline-block;
-					
-				}
-				.box2{
-					width: 20%;
-					height: 100%;
-					background: rgba(0,0,0,.2);
-					display: inline-block;
-					float: right;
-					position: relative;
-				}
-				.box1 ul {
-					margin: 10px auto;
-					padding: 10px 0 ;
-					list-style: none;
-				}
-				.box1 ul li{
-					margin: 0;
-					padding: 20px 0;
-				}
-				
-				.jt{
-					display: inline-block;
-					border: 5px solid;
-					border-color: rgba(0,0,0,.5)   transparent transparent ; /* 上,下,左右 */
-					width: 0;
-					
-				}
-			
-				#sj1{
-					border: 10px solid;
-					border-color: transparent  transparent white transparent; /* 上,下,左右 */
-					width: 0;
-					display: inline-block;
-				}
-				#alt{
-					width: 100px;
-					height: 100px;
-					background-color:white ;
-					margin: -5px 0 auto;
-					border: 5px solid white;
-					border-radius: 10px;
-				}
-				#play{
-					display: none;
-					position: absolute;
-					top: 22px;
-					left: 63px;
-					
-				}
-				.sz{
-					display: block;
-					margin: 10px;
-				}
-				#alt a:hover{
-					text-decoration: underline;
-				}
-				.box2 ul{
-					margin: 10;
-					padding: 0;
-					list-style: none;
-				} 
-				.box2 ul li{
-					margin-top:20px;
-				}
-		</style>
-	</head>
-	<body>
-		<div id="content">
-		<div class="header">
-				<h1>This Is Myblog </h1>
-		</div>
-		<div class="main">
-			<div class="box1">
-				<ul>
-					<li><a href="#">登录</a></li>
-					<li><a href="#">注册</a></li>
-					<li><a href="http://www.baidu.com">联系</a></li>
-					<li><a href="#">帮帮我</a></li>
-				</ul>
-			</div>
-			<div class="box">
-				<h2>hello world</h2>
-			</div>
-			<div class="box2">
-				<ul>
-					<li>
-						<a>设置</a>
-						<a href="#" id="sj" class="jt"></a>
-					</li>
-				<div id="play">
-					<div id="sj1"></div>
-					<div id="alt">
-					<a class="sz" href="#">个人设置</a>
-					<a class="sz" href="#">账号中心</a>
-					<a class="sz" href="#">退出</a>
-					</div>
-				</div>
-				<li>
-					<a>收藏</a>
-					<a class="jt"></a>
-					
-				</li>
-			</div>
-		</div>
-	</div>
-	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-	<script type="text/javascript">
-		var p=$("#play");
-		var a=$("#sj");
-		
-		a.mouseenter(function(){
-				p.slideDown(300);
-			});
-		p.mouseleave(function(){
-			p.slideUp(300);
-		})
-	</script>
-	</body>
-</html>
+You can use the [editor on GitHub](https://github.com/xiaobai2233/xiaobai.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+
+### Markdown
+
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+
+### Jekyll Themes
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xiaobai2233/xiaobai.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
+### Support or Contact
+
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
