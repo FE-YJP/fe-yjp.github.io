@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fe-yjp.github.io</id>
+    <title>FE-YJP</title>
+    <updated>2021-12-25T18:49:19.306Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fe-yjp.github.io"/>
+    <link rel="self" href="https://fe-yjp.github.io/atom.xml"/>
+    <subtitle>总有BUG想害朕</subtitle>
+    <logo>https://fe-yjp.github.io/images/avatar.png</logo>
+    <icon>https://fe-yjp.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, FE-YJP</rights>
+    <entry>
+        <title type="html"><![CDATA[Git常用命令]]></title>
+        <id>https://fe-yjp.github.io/post/git-chang-yong-ming-ling/</id>
+        <link href="https://fe-yjp.github.io/post/git-chang-yong-ming-ling/">
+        </link>
+        <updated>2021-12-25T18:29:21.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="git-全局设置">Git 全局设置</h3>
+<pre><code>git config --global user.name &quot;xiaobai&quot; //配置用户名
+git config --global user.email &quot;xiaobai2233@aliyun.com&quot; //配置邮箱
+</code></pre>
+<h3 id="创建-git-仓库">创建 git 仓库</h3>
+<pre><code>mkdir vuepress  //创建文件夹
+cd vuepress     //进入文件夹
+git init    //git初始化密令
+touch README.md //创建README.md文件
+git add README.md   //添加
+git commit -m &quot;first commit&quot;    //提交
+git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
+git push -u origin master   //上传
+</code></pre>
+<h3 id="已有仓库">已有仓库</h3>
+<pre><code>mkdir vuepress  //创建文件夹
+cd vuepress     //进入文件夹
+git init    //git初始化密令
+touch README.md //创建README.md文件
+git add README.md   //添加
+git commit -m &quot;first commit&quot;    //提交
+git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
+git push -u origin master   //上传
+</code></pre>
+<h3 id="生成密钥">生成密钥</h3>
+<pre><code>ssh-keygen -t rsa -C 你的登陆邮箱
+</code></pre>
+<h3 id="测试是否连接上github">测试是否连接上github</h3>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<h3 id="回退版本">回退版本</h3>
+<pre><code>git reset –-hard HEAD^ //回到上一个版本
+git reset –-hard HEAD 版本号 //回到指定版本
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript代码段]]></title>
+        <id>https://fe-yjp.github.io/post/javascript-dai-ma-duan/</id>
+        <link href="https://fe-yjp.github.io/post/javascript-dai-ma-duan/">
+        </link>
+        <updated>2021-12-25T18:10:00.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>返回一个键盘</li>
+</ol>
+<pre><code>// 用字符串返回一个键盘图形
+(_=&gt;[...&quot;`1234567890-=~~QWERTYUIOP[]\\~ASDFGHJKL;'~~ZXCVBNM,./~&quot;].map(x=&gt;(o+=`/${b='_'.repeat(w=x&lt;y?2:' 667699'[x=[&quot;BS&quot;,&quot;TAB&quot;,&quot;CAPS&quot;,&quot;ENTER&quot;][p++]||'SHIFT',p])}\\|`,m+=y+(x+'    ').slice(0,w)+y+y,n+=y+b+y+y,l+=' __'+b)[73]&amp;&amp;(k.push(l,m,n,o),l='',m=n=o=y),m=n=o=y='|',p=l=k=[])&amp;&amp;k.join`
+`)()
+</code></pre>
+<ol start="2">
+<li>生成日历</li>
+</ol>
+<pre><code>// 创建过去七天的数组，如果将代码中的减号换成加号，你将得到未来7天的数组集合
+[...Array(7).keys()].map(days =&gt; new Date(Date.now() - 86400000 * days).toLocaleString());
+</code></pre>
+<ol start="3">
+<li>生成随机十六进制代码（生成随机颜色）</li>
+</ol>
+<pre><code>// 生成随机十六进制代码 如：'#c618b2'
+'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
+</code></pre>
+<ol start="4">
+<li>自定义长度的随机字符串</li>
+</ol>
+<pre><code>function RandomString(len) {
+  var rdmString = &quot;&quot;;
+  for (; rdmString.length &lt; len; rdmString += Math.random().toString(36).substr(2));
+  return rdmString.substr(0, len);
+}
+</code></pre>
+<ol start="5">
+<li>JS实现图片压缩、预览、图片Base64转换上传</li>
+</ol>
+<pre><code>//html
+&lt;input type=&quot;file&quot; onchange=&quot;uploadFile()&quot; accept=&quot;image/*&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;&quot; alt=&quot;Image preview...&quot;&gt;
+//script
+**
+   * @description: 压缩base64图片
+   * @param {file:上传的文件}  
+   * @param {maxLen:限制最大长度、高度}  
+   * @param {callBack:回调函数}  
+   */
+  function ImgToBase64(file, maxLen, callBack) {
+  var img = new Image();
+  var reader = new FileReader();//读取客户端上的文件
+  reader.onload = function () {
+      var url = reader.result;//读取到的文件内容.这个属性只在读取操作完成之后才有效,并且数据的格式取决于读取操作是由哪个方法发起的.所以必须使用reader.onload，
+      img.src = url;//reader读取的文件内容是base64,利用这个url就能实现上传前预览图片
+  };
+  img.onload = function () {
+      //生成比例
+      var width = img.width, height = img.height;
+      //计算缩放比例
+      var rate = 1;
+      if (width &gt;= height) {
+          if (width &gt; maxLen) {
+              rate = maxLen / width;
+          }
+      } else {
+          if (height &gt; maxLen) {
+              rate = maxLen / height;
+          }
+      };
+      img.width = width * rate;
+      img.height = height * rate;
+      //生成canvas
+      var canvas = document.createElement(&quot;canvas&quot;);
+      var ctx = canvas.getContext(&quot;2d&quot;);
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      var base64 = canvas.toDataURL('image/jpeg', 0.9);//压缩后的base64图片
+      callBack(base64);
+  };
+  reader.readAsDataURL(file);
+}
+//调用方法
+function uploadFile(){
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  ImgToBase64(file, 720, function (base64) {
+      preview.src = base64;//预览页面上预留一个img元素，载入base64
+      preview.width = 300;//设定宽高，不然会自动按照压缩过的图片宽高设定，有可能超出预想的范围。
+　　　　　//此处上传base64到服务器，完毕
+  });
+}
+</code></pre>
+<ol start="6">
+<li>二进制转换十进制</li>
+</ol>
+<pre><code>parseInt(100,2) //4
+</code></pre>
+<ol start="7">
+<li>十进制转换二进制</li>
+</ol>
+<pre><code>parseInt(4).toString(2) //'100'
+</code></pre>
+<ol start="8">
+<li>实现简单打字效果</li>
+</ol>
+<pre><code>&lt;style&gt;
+.content:after{
+  content:&quot;|&quot;;
+  animation: blink 1s infinite;
+}
+@keyframes blink{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+&lt;/style&gt;
+&lt;body&gt;
+&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const dom = document.querySelector(&quot;.content&quot;);
+function writing(data){
+  let str = data.split(&quot;&quot;);
+  let index = 0;
+  function running(index){
+    if(index&lt;str.length){
+      dom.innerHTML += str[index];
+      setTimeout(running.bind(this),300,++index);
+    }
+  }
+  running(index);
+}
+writing(&quot;每天进步一点点&quot;);
+&lt;/script&gt;
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS常用代码段]]></title>
+        <id>https://fe-yjp.github.io/post/css-chang-yong-dai-ma-duan/</id>
+        <link href="https://fe-yjp.github.io/post/css-chang-yong-dai-ma-duan/">
+        </link>
+        <updated>2021-12-25T18:02:06.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://juejin.cn/post/6844903926110617613">CSS特殊技巧</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://juejin.cn/post/6844903926110617613">CSS特殊技巧</a></p>
+<!-- more -->
+<p><a href="https://chokcoco.github.io/CSS-Inspiration/">CSS灵感</a></p>
+<!-- more -->
+<p><a href="https://juejin.im/post/5d9ec8b0518825651b1dffa3?utm_source=gold_browser_extension">CSS开发技巧</a></p>
+<!-- more -->
+<ol>
+<li>布局边界显示<br>
+新建书签，在网址栏输入以下代码，保存书签，在想要查看样式的页面点击书签，会切换显示布局</li>
+</ol>
+<pre><code>javascript: (function(){ var style = document.querySelector('#_outline_'); if (style) { style.parentNode.removeChild(style); } else { style = document.createElement('style'); style.id = '_outline_'; style.innerHTML = &quot;*{outline: 1px solid red}&quot;; document.body.appendChild(style); } })();
+</code></pre>
+<ol start="2">
+<li>单行文本省略号</li>
+</ol>
+<pre><code>width:200px;//固定宽度
+overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap;
+</code></pre>
+<ol start="3">
+<li>超出两行文本省略号</li>
+</ol>
+<pre><code>width:200px;//固定宽度
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+</code></pre>
+<ol start="4">
+<li>去除数字输入框默认样式</li>
+</ol>
+<pre><code>width:200px;//固定宽度
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+</code></pre>
+]]></content>
+    </entry>
+</feed>

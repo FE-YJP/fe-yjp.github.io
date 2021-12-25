@@ -1,0 +1,320 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>JavaScript代码段 | FE-YJP</title>
+
+<link rel="shortcut icon" href="https://fe-yjp.github.io/favicon.ico?v=1640458154458">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fe-yjp.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            FE-YJP
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1640458154458" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    JavaScript代码段
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-12-26 ·
+                    </time>
+                    
+                        <a href="https://fe-yjp.github.io/tag/JPiCseh9v/" class="post-tags">
+                            # javascript
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <ol>
+<li>返回一个键盘</li>
+</ol>
+<pre><code>// 用字符串返回一个键盘图形
+(_=&gt;[...&quot;`1234567890-=~~QWERTYUIOP[]\\~ASDFGHJKL;'~~ZXCVBNM,./~&quot;].map(x=&gt;(o+=`/${b='_'.repeat(w=x&lt;y?2:' 667699'[x=[&quot;BS&quot;,&quot;TAB&quot;,&quot;CAPS&quot;,&quot;ENTER&quot;][p++]||'SHIFT',p])}\\|`,m+=y+(x+'    ').slice(0,w)+y+y,n+=y+b+y+y,l+=' __'+b)[73]&amp;&amp;(k.push(l,m,n,o),l='',m=n=o=y),m=n=o=y='|',p=l=k=[])&amp;&amp;k.join`
+`)()
+</code></pre>
+<ol start="2">
+<li>生成日历</li>
+</ol>
+<pre><code>// 创建过去七天的数组，如果将代码中的减号换成加号，你将得到未来7天的数组集合
+[...Array(7).keys()].map(days =&gt; new Date(Date.now() - 86400000 * days).toLocaleString());
+</code></pre>
+<ol start="3">
+<li>生成随机十六进制代码（生成随机颜色）</li>
+</ol>
+<pre><code>// 生成随机十六进制代码 如：'#c618b2'
+'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
+</code></pre>
+<ol start="4">
+<li>自定义长度的随机字符串</li>
+</ol>
+<pre><code>function RandomString(len) {
+  var rdmString = &quot;&quot;;
+  for (; rdmString.length &lt; len; rdmString += Math.random().toString(36).substr(2));
+  return rdmString.substr(0, len);
+}
+</code></pre>
+<ol start="5">
+<li>JS实现图片压缩、预览、图片Base64转换上传</li>
+</ol>
+<pre><code>//html
+&lt;input type=&quot;file&quot; onchange=&quot;uploadFile()&quot; accept=&quot;image/*&quot;&gt;&lt;br&gt;
+&lt;img src=&quot;&quot; alt=&quot;Image preview...&quot;&gt;
+//script
+**
+   * @description: 压缩base64图片
+   * @param {file:上传的文件}  
+   * @param {maxLen:限制最大长度、高度}  
+   * @param {callBack:回调函数}  
+   */
+  function ImgToBase64(file, maxLen, callBack) {
+  var img = new Image();
+  var reader = new FileReader();//读取客户端上的文件
+  reader.onload = function () {
+      var url = reader.result;//读取到的文件内容.这个属性只在读取操作完成之后才有效,并且数据的格式取决于读取操作是由哪个方法发起的.所以必须使用reader.onload，
+      img.src = url;//reader读取的文件内容是base64,利用这个url就能实现上传前预览图片
+  };
+  img.onload = function () {
+      //生成比例
+      var width = img.width, height = img.height;
+      //计算缩放比例
+      var rate = 1;
+      if (width &gt;= height) {
+          if (width &gt; maxLen) {
+              rate = maxLen / width;
+          }
+      } else {
+          if (height &gt; maxLen) {
+              rate = maxLen / height;
+          }
+      };
+      img.width = width * rate;
+      img.height = height * rate;
+      //生成canvas
+      var canvas = document.createElement(&quot;canvas&quot;);
+      var ctx = canvas.getContext(&quot;2d&quot;);
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0, img.width, img.height);
+      var base64 = canvas.toDataURL('image/jpeg', 0.9);//压缩后的base64图片
+      callBack(base64);
+  };
+  reader.readAsDataURL(file);
+}
+//调用方法
+function uploadFile(){
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  ImgToBase64(file, 720, function (base64) {
+      preview.src = base64;//预览页面上预留一个img元素，载入base64
+      preview.width = 300;//设定宽高，不然会自动按照压缩过的图片宽高设定，有可能超出预想的范围。
+　　　　　//此处上传base64到服务器，完毕
+  });
+}
+</code></pre>
+<ol start="6">
+<li>二进制转换十进制</li>
+</ol>
+<pre><code>parseInt(100,2) //4
+</code></pre>
+<ol start="7">
+<li>十进制转换二进制</li>
+</ol>
+<pre><code>parseInt(4).toString(2) //'100'
+</code></pre>
+<ol start="8">
+<li>实现简单打字效果</li>
+</ol>
+<pre><code>&lt;style&gt;
+.content:after{
+  content:&quot;|&quot;;
+  animation: blink 1s infinite;
+}
+@keyframes blink{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
+  }
+}
+&lt;/style&gt;
+&lt;body&gt;
+&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const dom = document.querySelector(&quot;.content&quot;);
+function writing(data){
+  let str = data.split(&quot;&quot;);
+  let index = 0;
+  function running(index){
+    if(index&lt;str.length){
+      dom.innerHTML += str[index];
+      setTimeout(running.bind(this),300,++index);
+    }
+  }
+  running(index);
+}
+writing(&quot;每天进步一点点&quot;);
+&lt;/script&gt;
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://fe-yjp.github.io/post/css-chang-yong-dai-ma-duan/" class="post-title gt-a-link">
+                    CSS常用代码段
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '',
+		appKey: '',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: '请在此处留言',
+		visitor: false,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">总有BUG想害朕</div>
+    <div class="social-container">
+        
+            
+                <a href="https://fe-yjp.github.io" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/fe-yjp" target="_blank">FE-YJP</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://fe-yjp.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
