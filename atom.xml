@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fe-yjp.github.io</id>
     <title>FE-YJP</title>
-    <updated>2021-12-26T09:35:03.781Z</updated>
+    <updated>2021-12-26T11:24:27.007Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fe-yjp.github.io"/>
     <link rel="self" href="https://fe-yjp.github.io/atom.xml"/>
@@ -11,44 +11,25 @@
     <icon>https://fe-yjp.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, FE-YJP</rights>
     <entry>
-        <title type="html"><![CDATA[Git常用命令]]></title>
-        <id>https://fe-yjp.github.io/post/git-chang-yong-ming-ling/</id>
-        <link href="https://fe-yjp.github.io/post/git-chang-yong-ming-ling/">
+        <title type="html"><![CDATA[Vue]]></title>
+        <id>https://fe-yjp.github.io/post/vue/</id>
+        <link href="https://fe-yjp.github.io/post/vue/">
         </link>
-        <updated>2021-12-25T18:29:21.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="git-全局设置">Git 全局设置</h3>
-<pre><code>git config --global user.name &quot;xxx&quot; //配置用户名
-git config --global user.email &quot;xxx@aliyun.com&quot; //配置邮箱
-</code></pre>
-<h3 id="创建-git-仓库">创建 git 仓库</h3>
-<pre><code>mkdir vuepress  //创建文件夹
-cd vuepress     //进入文件夹
-git init    //git初始化密令
-touch README.md //创建README.md文件
-git add README.md   //添加
-git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
-git push -u origin master   //上传
-</code></pre>
-<h3 id="已有仓库">已有仓库</h3>
-<pre><code>mkdir vuepress  //创建文件夹
-cd vuepress     //进入文件夹
-git init    //git初始化密令
-touch README.md //创建README.md文件
-git add README.md   //添加
-git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
-git push -u origin master   //上传
-</code></pre>
-<h3 id="生成密钥">生成密钥</h3>
-<pre><code>ssh-keygen -t rsa -C 你的登陆邮箱
-</code></pre>
-<h3 id="测试是否连接上github">测试是否连接上github</h3>
-<pre><code>ssh -T git@github.com
-</code></pre>
-<h3 id="回退版本">回退版本</h3>
-<pre><code>git reset –-hard HEAD^ //回到上一个版本
-git reset –-hard HEAD 版本号 //回到指定版本
+        <updated>2021-12-26T09:41:35.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="vue项目">vue项目</h3>
+<ol>
+<li>俄罗斯方块<br>
+<a href="https://binaryify.github.io/vue-tetris/">项目地址</a><br>
+<img src="https://fe-yjp.github.io/post-images/1640512285083.jpg" alt="" loading="lazy"></li>
+</ol>
+<h3 id="vue相关">vue相关</h3>
+<ol>
+<li>/node_modules/@vue\cli-service/lib/config/terserOptions.js compress 添加以下代码</li>
+</ol>
+<pre><code>warnings: false,
+drop_console: true,
+drop_debugger: true,
+pure_funcs: ['console.log']
 </code></pre>
 ]]></content>
     </entry>
@@ -386,6 +367,48 @@ overflow: hidden;
           transform: scale(0.9);
         }
       }
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Git常用命令]]></title>
+        <id>https://fe-yjp.github.io/post/git-chang-yong-ming-ling/</id>
+        <link href="https://fe-yjp.github.io/post/git-chang-yong-ming-ling/">
+        </link>
+        <updated>2021-12-24T04:29:21.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="git-全局设置">Git 全局设置</h3>
+<pre><code>git config --global user.name &quot;xxx&quot; //配置用户名
+git config --global user.email &quot;xxx@aliyun.com&quot; //配置邮箱
+</code></pre>
+<h3 id="创建-git-仓库">创建 git 仓库</h3>
+<pre><code>mkdir vuepress  //创建文件夹
+cd vuepress     //进入文件夹
+git init    //git初始化密令
+touch README.md //创建README.md文件
+git add README.md   //添加
+git commit -m &quot;first commit&quot;    //提交
+git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
+git push -u origin master   //上传
+</code></pre>
+<h3 id="已有仓库">已有仓库</h3>
+<pre><code>mkdir vuepress  //创建文件夹
+cd vuepress     //进入文件夹
+git init    //git初始化密令
+touch README.md //创建README.md文件
+git add README.md   //添加
+git commit -m &quot;first commit&quot;    //提交
+git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
+git push -u origin master   //上传
+</code></pre>
+<h3 id="生成密钥">生成密钥</h3>
+<pre><code>ssh-keygen -t rsa -C 你的登陆邮箱
+</code></pre>
+<h3 id="测试是否连接上github">测试是否连接上github</h3>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<h3 id="回退版本">回退版本</h3>
+<pre><code>git reset –-hard HEAD^ //回到上一个版本
+git reset –-hard HEAD 版本号 //回到指定版本
 </code></pre>
 ]]></content>
     </entry>
