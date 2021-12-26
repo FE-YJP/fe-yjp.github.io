@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fe-yjp.github.io</id>
     <title>FE-YJP</title>
-    <updated>2021-12-26T06:48:47.886Z</updated>
+    <updated>2021-12-26T07:01:24.971Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fe-yjp.github.io"/>
     <link rel="self" href="https://fe-yjp.github.io/atom.xml"/>
@@ -253,7 +253,7 @@ overflow: hidden;
 </code></pre>
 <ol start="5">
 <li>优化checkbox框<br>
-<img src="https://fe-yjp.github.io/post-images/1640500598443.gif" alt="" loading="lazy"></li>
+<img src="https://static01.imgkr.com/temp/21052ad97ced4f728c58e301aec852bc.gif" alt="" loading="lazy"></li>
 </ol>
 <pre><code>// HTML
 &lt;svg class=&quot;checkbox-symbol&quot;&gt;
