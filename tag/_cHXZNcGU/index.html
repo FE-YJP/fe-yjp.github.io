@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Git常用命令 | FE-YJP</title>
+<title>css | FE-YJP</title>
 
 <link rel="shortcut icon" href="https://fe-yjp.github.io/favicon.ico?v=1640495763685">
 
@@ -25,11 +25,11 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,108 +85,54 @@
     </div>
 </nav>
 
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    Git常用命令
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2021-12-26 ·
-                    </time>
-                    
-                        <a href="https://fe-yjp.github.io/tag/bAd6tl_IS/" class="post-tags">
-                            # git
-                        </a>
-                    
-                </div>
-                <div class="post-content">
-                    <h3 id="git-全局设置">Git 全局设置</h3>
-<pre><code>git config --global user.name &quot;xiaobai&quot; //配置用户名
-git config --global user.email &quot;xiaobai2233@aliyun.com&quot; //配置邮箱
-</code></pre>
-<h3 id="创建-git-仓库">创建 git 仓库</h3>
-<pre><code>mkdir vuepress  //创建文件夹
-cd vuepress     //进入文件夹
-git init    //git初始化密令
-touch README.md //创建README.md文件
-git add README.md   //添加
-git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
-git push -u origin master   //上传
-</code></pre>
-<h3 id="已有仓库">已有仓库</h3>
-<pre><code>mkdir vuepress  //创建文件夹
-cd vuepress     //进入文件夹
-git init    //git初始化密令
-touch README.md //创建README.md文件
-git add README.md   //添加
-git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
-git push -u origin master   //上传
-</code></pre>
-<h3 id="生成密钥">生成密钥</h3>
-<pre><code>ssh-keygen -t rsa -C 你的登陆邮箱
-</code></pre>
-<h3 id="测试是否连接上github">测试是否连接上github</h3>
-<pre><code>ssh -T git@github.com
-</code></pre>
-<h3 id="回退版本">回退版本</h3>
-<pre><code>git reset –-hard HEAD^ //回到上一个版本
-git reset –-hard HEAD 版本号 //回到指定版本
-</code></pre>
-
-                </div>
-            </article>
+        <div class="current-tag-container">
+            <h2 class="title gt-c-content-color-first">
+                #css
+            </h2>
         </div>
-
+        <div class="post-list-container">
+    <div class="post-inner">
         
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://fe-yjp.github.io/post/javascript-dai-ma-duan/" class="post-title gt-a-link">
-                    JavaScript代码段
-                </a>
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://fe-yjp.github.io/post/css-chang-yong-dai-ma-duan/">
+                            <span class="post-title gt-c-content-color-first">CSS常用代码段</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p><a href="https://juejin.cn/post/6844903926110617613">CSS特殊技巧</a></p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2021-12-26 ·
+                        </time>
+                        
+                            <a href="https://fe-yjp.github.io/tag/_cHXZNcGU/" class="post-tag">
+                                # css
+                            </a>
+                        
+                            <a href="https://fe-yjp.github.io/tag/bAd6tl_IS/" class="post-tag">
+                                # git
+                            </a>
+                        
+                    </div>
+                </div>
+                
+                    <a href="https://fe-yjp.github.io/post/css-chang-yong-dai-ma-duan/" class="post-feature-image"
+                       style="background-image: url('https://fe-yjp.github.io/post-images/css-chang-yong-dai-ma-duan.jpg')">
+                    </a>
+                
             </div>
         
-
-        
-            <span id="/post/git-chang-yong-ming-ling/" class="leancloud_visitors" data-flag-title="Git常用命令">
-                <em class="post-meta-item-text">阅读量 </em>
-                <i class="leancloud-visitors-count">0</i>
-            </span>
-        
-
-        
-
-        
-            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
-
-<style>
-	div#vcomments{
-		width:100%;
-		max-width: 1000px;
-		padding: 2.5%
-	}
-</style>
-
-
-	<div id="vcomments"></div>
-
-<script>
-	new Valine({
-		el: '#vcomments',
-		appId: 'fWPms8CDO1DrxRfrvciTJ2Ft-gzGzoHsz',
-		appKey: 'MQhBYnE49J2R8EoSKSz5Ks1W',
-		avatar: '',
-		pageSize: 5,
-		recordIp: true,
-		placeholder: '请在此处留言',
-		visitor: true,
-	});
-</script>
-
-        
+    </div>
+</div>
+        <div class="pagination-container">
+    
+    
+</div>
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">总有BUG想害朕</div>
