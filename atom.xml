@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fe-yjp.github.io</id>
     <title>FE-YJP</title>
-    <updated>2021-12-26T05:28:38.404Z</updated>
+    <updated>2021-12-26T06:42:08.735Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fe-yjp.github.io"/>
     <link rel="self" href="https://fe-yjp.github.io/atom.xml"/>
@@ -17,8 +17,8 @@
         </link>
         <updated>2021-12-25T18:29:21.000Z</updated>
         <content type="html"><![CDATA[<h3 id="git-全局设置">Git 全局设置</h3>
-<pre><code>git config --global user.name &quot;xiaobai&quot; //配置用户名
-git config --global user.email &quot;xiaobai2233@aliyun.com&quot; //配置邮箱
+<pre><code>git config --global user.name &quot;xxx&quot; //配置用户名
+git config --global user.email &quot;xxx@aliyun.com&quot; //配置邮箱
 </code></pre>
 <h3 id="创建-git-仓库">创建 git 仓库</h3>
 <pre><code>mkdir vuepress  //创建文件夹
@@ -27,7 +27,7 @@ git init    //git初始化密令
 touch README.md //创建README.md文件
 git add README.md   //添加
 git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
+git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
 git push -u origin master   //上传
 </code></pre>
 <h3 id="已有仓库">已有仓库</h3>
@@ -37,7 +37,7 @@ git init    //git初始化密令
 touch README.md //创建README.md文件
 git add README.md   //添加
 git commit -m &quot;first commit&quot;    //提交
-git remote add origin git@gitee.com:yuanjunping/vuepress.git    //添加远程关联地址
+git remote add origin git@gitee.com:xxx/vuepress.git    //添加远程关联地址
 git push -u origin master   //上传
 </code></pre>
 <h3 id="生成密钥">生成密钥</h3>
@@ -189,6 +189,20 @@ function writing(data){
 writing(&quot;每天进步一点点&quot;);
 &lt;/script&gt;
 </code></pre>
+<ol start="9">
+<li>实现延时函数</li>
+</ol>
+<pre><code>const sleep = (ms) =&gt; new Promise(resolve =&gt; setTimeout(resolve, ms));
+
+const printNums = async() =&gt; {
+  console.log(1);
+  await sleep(500);
+  console.log(2);
+  console.log(3);
+};
+
+printNums(); // Logs: 1, 2, 3 (2 and 3 log after 500ms)
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -236,6 +250,142 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 2;
 overflow: hidden;
+</code></pre>
+<ol start="5">
+<li>优化checkbox框<br>
+<img src="https://fe-yjp.github.io/post-images/1640500598443.gif" alt="" loading="lazy"></li>
+</ol>
+<pre><code>// HTML
+&lt;svg class=&quot;checkbox-symbol&quot;&gt;
+      &lt;symbol id=&quot;check&quot; viewbox=&quot;0 0 12 10&quot;&gt;
+        &lt;polyline
+          points=&quot;1.5 6 4.5 9 10.5 1&quot;
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          stroke-width=&quot;2&quot;
+        &gt;&lt;/polyline&gt;
+      &lt;/symbol&gt;
+    &lt;/svg&gt;
+
+    &lt;div class=&quot;checkbox-container&quot;&gt;
+      &lt;input class=&quot;checkbox-input&quot; id=&quot;apples&quot; type=&quot;checkbox&quot; /&gt;
+      &lt;label class=&quot;checkbox&quot; for=&quot;apples&quot;&gt;
+        &lt;span&gt;
+          &lt;svg width=&quot;12px&quot; height=&quot;10px&quot;&gt;
+            &lt;use xlink:href=&quot;#check&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;span&gt;Apples&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;input class=&quot;checkbox-input&quot; id=&quot;oranges&quot; type=&quot;checkbox&quot; /&gt;
+      &lt;label class=&quot;checkbox&quot; for=&quot;oranges&quot;&gt;
+        &lt;span&gt;
+          &lt;svg width=&quot;12px&quot; height=&quot;10px&quot;&gt;
+            &lt;use xlink:href=&quot;#check&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;span&gt;Oranges&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+// CSS
+     .checkbox-symbol {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .checkbox-container {
+        box-sizing: border-box;
+        background: #ffffff;
+        color: #222;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+      }
+
+      .checkbox-container * {
+        box-sizing: border-box;
+      }
+
+      .checkbox-input {
+        position: absolute;
+        visibility: hidden;
+      }
+
+      .checkbox {
+        user-select: none;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: 6px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+      }
+
+      .checkbox:not(:last-child) {
+        margin-right: 6px;
+      }
+
+      .checkbox:hover {
+        background: rgba(0, 119, 255, 0.06);
+      }
+
+      .checkbox span {
+        vertical-align: middle;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .checkbox span:first-child {
+        position: relative;
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        transform: scale(1);
+        border: 1px solid #cccfdb;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox span:first-child svg {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .checkbox span:last-child {
+        padding-left: 8px;
+        line-height: 18px;
+      }
+
+      .checkbox:hover span:first-child {
+        border-color: #0077ff;
+      }
+
+      .checkbox-input:checked + .checkbox span:first-child {
+        background: #0077ff;
+        border-color: #0077ff;
+        animation: zoom-in-out 0.3s ease;
+      }
+
+      .checkbox-input:checked + .checkbox span:first-child svg {
+        stroke-dashoffset: 0;
+      }
+
+      @keyframes zoom-in-out {
+        50% {
+          transform: scale(0.9);
+        }
+      }
 </code></pre>
 ]]></content>
     </entry>

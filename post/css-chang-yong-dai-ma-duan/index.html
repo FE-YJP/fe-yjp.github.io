@@ -6,7 +6,7 @@
 
 <title>CSS常用代码段 | FE-YJP</title>
 
-<link rel="shortcut icon" href="https://fe-yjp.github.io/favicon.ico?v=1640496514636">
+<link rel="shortcut icon" href="https://fe-yjp.github.io/favicon.ico?v=1640500903977">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fe-yjp.github.io/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1640496514636" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1640500903977" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -143,6 +143,142 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 -webkit-line-clamp: 2;
 overflow: hidden;
+</code></pre>
+<ol start="5">
+<li>优化checkbox框<br>
+<img src="https://fe-yjp.github.io/post-images/1640500598443.gif" alt="" loading="lazy"></li>
+</ol>
+<pre><code>// HTML
+&lt;svg class=&quot;checkbox-symbol&quot;&gt;
+      &lt;symbol id=&quot;check&quot; viewbox=&quot;0 0 12 10&quot;&gt;
+        &lt;polyline
+          points=&quot;1.5 6 4.5 9 10.5 1&quot;
+          stroke-linecap=&quot;round&quot;
+          stroke-linejoin=&quot;round&quot;
+          stroke-width=&quot;2&quot;
+        &gt;&lt;/polyline&gt;
+      &lt;/symbol&gt;
+    &lt;/svg&gt;
+
+    &lt;div class=&quot;checkbox-container&quot;&gt;
+      &lt;input class=&quot;checkbox-input&quot; id=&quot;apples&quot; type=&quot;checkbox&quot; /&gt;
+      &lt;label class=&quot;checkbox&quot; for=&quot;apples&quot;&gt;
+        &lt;span&gt;
+          &lt;svg width=&quot;12px&quot; height=&quot;10px&quot;&gt;
+            &lt;use xlink:href=&quot;#check&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;span&gt;Apples&lt;/span&gt;
+      &lt;/label&gt;
+      &lt;input class=&quot;checkbox-input&quot; id=&quot;oranges&quot; type=&quot;checkbox&quot; /&gt;
+      &lt;label class=&quot;checkbox&quot; for=&quot;oranges&quot;&gt;
+        &lt;span&gt;
+          &lt;svg width=&quot;12px&quot; height=&quot;10px&quot;&gt;
+            &lt;use xlink:href=&quot;#check&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/span&gt;
+        &lt;span&gt;Oranges&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+// CSS
+     .checkbox-symbol {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .checkbox-container {
+        box-sizing: border-box;
+        background: #ffffff;
+        color: #222;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+      }
+
+      .checkbox-container * {
+        box-sizing: border-box;
+      }
+
+      .checkbox-input {
+        position: absolute;
+        visibility: hidden;
+      }
+
+      .checkbox {
+        user-select: none;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: 6px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+      }
+
+      .checkbox:not(:last-child) {
+        margin-right: 6px;
+      }
+
+      .checkbox:hover {
+        background: rgba(0, 119, 255, 0.06);
+      }
+
+      .checkbox span {
+        vertical-align: middle;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .checkbox span:first-child {
+        position: relative;
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        transform: scale(1);
+        border: 1px solid #cccfdb;
+        transition: all 0.3s ease;
+      }
+
+      .checkbox span:first-child svg {
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .checkbox span:last-child {
+        padding-left: 8px;
+        line-height: 18px;
+      }
+
+      .checkbox:hover span:first-child {
+        border-color: #0077ff;
+      }
+
+      .checkbox-input:checked + .checkbox span:first-child {
+        background: #0077ff;
+        border-color: #0077ff;
+        animation: zoom-in-out 0.3s ease;
+      }
+
+      .checkbox-input:checked + .checkbox span:first-child svg {
+        stroke-dashoffset: 0;
+      }
+
+      @keyframes zoom-in-out {
+        50% {
+          transform: scale(0.9);
+        }
+      }
 </code></pre>
 
                 </div>
